@@ -1,0 +1,29 @@
+name: CI Pipeline #nombre del flujo de trabajo
+
+on:                     # Cuándo voy a ejecutarlo
+  push:                 
+    branches: [ main ]  # Solo cuando hay un push en main
+  pull_request:
+    branches: [ main ] # Solo en PRs hacia main
+
+jobs:                   # Qué tareas ejecuta
+  build:
+    runs-on: ubuntu-latest  # Máquina virtual de GitHub
+
+    steps:               # Pasos a ejecutar
+      - name: Checkout code
+        uses: actions/checkout@v4   # Descarga el código del repo
+
+      - name: Setup Node.js         # Configura Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies    # Instala las dependencias
+        run: npm install
+
+      - name: Run tests               # Ejecuta los tests
+        run: npm test
+
+      - name: Build project           # Construye el proyecto
+        run: npm run build
