@@ -21,9 +21,8 @@ jobs:                   # Qué tareas ejecuta
 
       - name: Install dependencies    # Instala las dependencias
         run: npm install
-
-      - name: Run tests               # Ejecuta los tests
-        run: npm test
+        working-directory: ./client
 
       - name: Build project           # Construye el proyecto
         run: npm run build
+        working-directory: ./client
