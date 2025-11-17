@@ -1,0 +1,11 @@
+name: Hola Mundo Manual
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hola:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Imprimir mensaje
+        run: echo "Hola mundo desde GitHub Actions"
