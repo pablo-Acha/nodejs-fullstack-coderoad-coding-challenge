@@ -50,6 +50,7 @@ jobs:
           source: "server/*"
           target: "/var/www/backend/"
 
+
       # --------- INSTALL BACKEND DEPS + RESTART ----------
       - name: Restart Backend with PM2
         uses: appleboy/ssh-action@v1
