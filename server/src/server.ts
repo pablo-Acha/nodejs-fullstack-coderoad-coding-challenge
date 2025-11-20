@@ -41,6 +41,7 @@ app.get('/api/items', async (req: Request, res: Response) => {
   res.json(db.items); // DEVUELVE UN ARRAY
 });
 
+
 // get item by id
 app.get('/api/items/:id', async (req: Request, res: Response) => {
   const db = await readDB();
